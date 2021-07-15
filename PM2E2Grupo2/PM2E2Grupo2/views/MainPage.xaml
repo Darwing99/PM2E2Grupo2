@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Agregar Ubicacion"
+             x:Class="PM2E2Grupo2.MainPage">
+
+  
+    <StackLayout>
+        <StackLayout Padding="10">
+            <Frame CornerRadius="20"  Visual="Material">
+               
+                <StackLayout Orientation="Vertical">
+                    <Grid>
+                        <Image Grid.Row="0" Source="https://www.uth.hn/wp-content/uploads/2019/12/logo-1.png"></Image>
+                    </Grid>
+                   
+                  
+                </StackLayout>
+
+            </Frame>
+            
+        </StackLayout>
+
+        <ScrollView>
+            <StackLayout Visual="Material">
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button IsVisible="true" x:Name="buttoncamera" Clicked="buttoncamera_Clicked" Text="Tomar Foto"   HorizontalOptions="Center"  
+                       VerticalOptions="Center"/>
+                    <Button IsVisible="true" x:Name="buttonfile" Text="Select Image" Clicked="Button_Clicked"  HorizontalOptions="Center"  
+                       VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Margin="10" Orientation="Vertical">
+                    
+                    <Grid>
+                        <Image IsVisible="false"  HeightRequest="200" x:Name="imagefile" Grid.Row="0" ></Image>
+                    </Grid>
+                   
+
+                </StackLayout>
+                <StackLayout  Padding="20">
+                    <StackLayout Orientation="Vertical">
+                        
+                        <Entry Margin="0,15,0,15"  Visual="Material" IsEnabled="False" Keyboard="Numeric"  x:Name="latitud" Placeholder="Latitud Actual"/>
+                        <Entry Margin="0,15,0,15" Keyboard="Numeric" IsEnabled="False" x:Name="longitud"   Visual="Material" Placeholder="Longitud Actual"/>
+                        <Editor Margin="0,15,0,15" Keyboard="Text" Visual="Material" x:Name="descripcion_larga" Placeholder="Describa La Ubicacion"/>
+             
+                    </StackLayout>
+                    
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button Margin="0,0,0,10" HeightRequest="50" x:Name="Salvar" Clicked="Salvar_Clicked"  Text="Salvar Ubicacion"></Button>
+                        <Button  Margin="0,0,0,10" HeightRequest="50"  Clicked="Button_Clicked_1"  Visual="Material" Text="Ubicaciones Salvadas"></Button>
+                    </StackLayout>
+
+                    <ActivityIndicator x:Name="refresc" Color="Green" IsRunning="False">
+
+                    </ActivityIndicator>
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

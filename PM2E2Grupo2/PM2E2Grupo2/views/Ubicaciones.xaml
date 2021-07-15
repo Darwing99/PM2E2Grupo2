@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2Grupo2.views.Ubicaciones"
+             Title="Ubicaciones Guardadas">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+
+            <StackLayout  Padding="20">
+
+
+                <ListView RowHeight="150" RefreshControlColor="Aquamarine" BackgroundColor="#D5E2FA" Visual="Material"  ItemSelected="lista_ItemSelected"  x:Name="lista"  >
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="10" Visual="Material">
+                                    <Grid.RowDefinitions>
+
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label  Text="{Binding id}" FontFamily="ubuntu" FontSize="14" Grid.Row="0" Grid.Column="0"></Label>
+                                    <Label Text="{Binding descripcion}" FontSize="14" Grid.Row="0" Grid.Column="2"></Label>
+                                    <Image  Grid.Row="0" Grid.Column="1" Source="{Binding fotografia,Converter={StaticResource bisc}}"></Image>
+                                    
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Grid HorizontalOptions="CenterAndExpand">
+                    <Label x:Name="id" IsVisible="false"></Label>
+                    <Label x:Name="descripcion" IsVisible="false"></Label>
+                    <Label x:Name="latitud" IsVisible="false"></Label>
+                    <Label x:Name="longitud" IsVisible="false"></Label>
+                   
+                    <Button HeightRequest="50" Grid.Row="0" x:Name="Eliminar" Clicked="Eliminar_Clicked"  Grid.Column="0" Visual="Material" Text="Delete"></Button>
+                    <Button HeightRequest="50" Grid.Row="0" x:Name="actualizar" Clicked="actualizar_Clicked"  Grid.Column="1" Visual="Material" Text="Update"></Button>
+                    <Button HeightRequest="50" Grid.Row="0" x:Name="ShowMapa"  Clicked="ShowMapa_Clicked"  Grid.Column="2" Visual="Material" Text="ForsquareApi"></Button>
+                </Grid>
+
+
+            </StackLayout>
+        </StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>
