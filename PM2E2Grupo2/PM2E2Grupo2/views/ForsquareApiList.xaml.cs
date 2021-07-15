@@ -42,6 +42,8 @@ namespace PM2E2Grupo2.views
             }
         }
 
+
+        //listo
         protected async override void OnAppearing()
         {
             base.OnAppearing();
